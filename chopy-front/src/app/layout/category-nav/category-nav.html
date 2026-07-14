@@ -1,0 +1,13 @@
+<nav class="category-nav">
+  @for (item of items; track item.label) {
+    <button
+      type="button"
+      class="item"
+      [class.active]="isActive(item)"
+      (click)="onSelect(item)"
+    >
+      <svg [lucideIcon]="item.icon"></svg>
+      <span>{{ item.label }}</span>
+    </button>
+  }
+</nav>

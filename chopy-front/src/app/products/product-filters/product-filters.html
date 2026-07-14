@@ -1,0 +1,18 @@
+<div class="filters">
+  <div class="search-box">
+    <svg lucideSearch></svg>
+    <input
+      type="search"
+      placeholder="¿Qué estás buscando?"
+      [value]="searchQuery()"
+      (input)="onSearchInput($event)"
+    />
+  </div>
+
+  <select [value]="selectedCategory() ?? ''" (change)="onCategoryChange($event)">
+    <option value="">Todas las categorías</option>
+    @for (category of categories(); track category) {
+      <option [value]="category">{{ category }}</option>
+    }
+  </select>
+</div>

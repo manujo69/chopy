@@ -1,0 +1,23 @@
+.showcase-title {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.25rem;
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+}
+
+.loading {
+  padding: 0 1rem;
+  color: #666;
+}

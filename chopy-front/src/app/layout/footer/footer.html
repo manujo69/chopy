@@ -1,0 +1,16 @@
+<div class="columns">
+  @for (column of columns; track column.title) {
+    <div class="column">
+      <h3>{{ column.title }}</h3>
+      <ul>
+        @for (link of column.links; track link) {
+          <li><a href="#">{{ link }}</a></li>
+        }
+      </ul>
+    </div>
+  }
+</div>
+
+<div class="copyright">
+  © {{ year }} CHOPY · Web de prueba con fines de demostración. Marca ficticia.
+</div>

@@ -1,0 +1,13 @@
+<h2 class="showcase-title">Nuestros productos <span>· {{ total() }} productos</span></h2>
+
+@if (loading()) {
+  <p class="loading">Cargando productos…</p>
+}
+
+<div class="grid">
+  @for (product of products(); track product.id) {
+    <app-product-card [product]="product" />
+  }
+</div>
+
+<app-pagination [page]="page()" [totalPages]="totalPages()" />

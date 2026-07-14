@@ -1,0 +1,9 @@
+<app-header />
+<app-category-nav />
+<router-outlet />
+
+@defer (hydrate on viewport) {
+  <app-footer />
+} @placeholder {
+  <div class="footer-placeholder"></div>
+}

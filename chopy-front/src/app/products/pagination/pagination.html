@@ -1,0 +1,44 @@
+@if (totalPages() > 1) {
+  <nav class="pagination" aria-label="Paginación de productos">
+    <a
+      class="pagination__link pagination__link--prev"
+      [class.pagination__link--disabled]="page() === 1"
+      [attr.aria-disabled]="page() === 1 ? true : null"
+      [routerLink]="[]"
+      [queryParams]="{ page: page() - 1 }"
+      queryParamsHandling="merge"
+      aria-label="Página anterior"
+    >
+      ‹
+    </a>
+
+    @for (entry of pages(); track $index) {
+      @if (entry === 'ellipsis') {
+        <span class="pagination__ellipsis">…</span>
+      } @else {
+        <a
+          class="pagination__link"
+          [class.pagination__link--active]="entry === page()"
+          [attr.aria-current]="entry === page() ? 'page' : null"
+          [routerLink]="[]"
+          [queryParams]="{ page: entry }"
+          queryParamsHandling="merge"
+        >
+          {{ entry }}
+        </a>
+      }
+    }
+
+    <a
+      class="pagination__link pagination__link--next"
+      [class.pagination__link--disabled]="page() === totalPages()"
+      [attr.aria-disabled]="page() === totalPages() ? true : null"
+      [routerLink]="[]"
+      [queryParams]="{ page: page() + 1 }"
+      queryParamsHandling="merge"
+      aria-label="Página siguiente"
+    >
+      ›
+    </a>
+  </nav>
+}

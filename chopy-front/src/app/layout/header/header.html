@@ -1,0 +1,34 @@
+<div class="topbar">
+  <span class="locale">ES</span>
+  <span class="contact">
+    <svg lucidePhone></svg>
+    900 123 456
+  </span>
+  <span class="contact">
+    <svg lucideMail></svg>
+    Escríbenos
+  </span>
+  <a class="account" href="#">
+    <svg lucideUser></svg>
+    Mi cuenta
+  </a>
+</div>
+
+<div class="main-row">
+  <a class="logo" href="/">CHOPY</a>
+
+  <app-product-filters
+    class="filters"
+    [categories]="filterState.categories()"
+    [searchQuery]="filterState.searchQuery()"
+    [selectedCategory]="filterState.selectedCategory()"
+    (searchChange)="onSearchChange($event)"
+    (categoryChange)="onCategoryChange($event)"
+  />
+
+  <a class="cart" href="#">
+    <svg lucideShoppingBasket></svg>
+    <span class="cart-count">{{ cart.itemCount() }}</span>
+    <span class="cart-total">{{ cart.totalPrice() | number: '1.2-2' }} €</span>
+  </a>
+</div>
